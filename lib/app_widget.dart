@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ola_mundo_flutter/app_controller.dart';
 import 'package:ola_mundo_flutter/home_page.dart';
+import 'package:ola_mundo_flutter/login_page.dart';
 
 class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class AppWidget extends StatelessWidget {
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          home: HomePage(),
+          home: LoginPage(),
         );
       },
     );
