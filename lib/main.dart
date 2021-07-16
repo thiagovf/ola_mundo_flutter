@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(Container(
-      child: Center(
-    child: Text("Alou, pet",
-        textDirection: TextDirection.ltr,
-        style: TextStyle(color: Colors.lightBlue, fontSize: 50)),
-  )));
+  runApp(AppWidget(title: 'Alou, pet!'));
+}
+
+class AppWidget extends StatelessWidget {
+  final title;
+
+  const AppWidget({Key? key, this.title}) : super(key: key);
+
+  Widget build(BuildContext context) {
+    return Container(
+        child: Center(
+      child: Text(this.title,
+          textDirection: TextDirection.ltr,
+          style: TextStyle(color: Colors.brown, fontSize: 50)),
+    ));
+  }
 }
