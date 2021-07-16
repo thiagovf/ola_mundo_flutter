@@ -1,3 +1,6 @@
+import 'dart:ffi';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ola_mundo_flutter/custom_switch.dart';
 import 'package:ola_mundo_flutter/home_page.dart';
@@ -12,10 +15,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String email = '';
   String password = '';
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
+
+  Widget _body() {
+    return SingleChildScrollView(
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -51,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                     labelText: 'Password', border: OutlineInputBorder()),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               ElevatedButton(
                   onPressed: () {
@@ -76,63 +78,40 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-    ));
+    );
   }
-}
 
-class HomePageState extends State<HomePage> {
-  int count = 0;
-
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-        actions: [CustomSwitch()],
-      ),
-      body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Contador: $count'),
-              Container(
-                height: 10,
-              ),
-              CustomSwitch(),
-              Container(
-                height: 50,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    width: 100,
-                    height: 50,
-                    color: Colors.black,
-                  ),
-                  Container(
-                    width: 100,
-                    height: 50,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 100,
-                    height: 50,
-                    color: Colors.red,
-                  ),
-                ],
-              ),
-            ],
-          )),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            count++;
-          });
-        },
-      ),
-    );
+        body: Stack(
+      children: [
+        Container(
+          color: Colors.green,
+        ),
+
+        // no lugar do container, poderia usar uma imagem de background com o código comentado abaixo.
+        /*
+          Image.asset('assets/images/background.jpg'),
+        */
+
+        // Container abaixo funcionaria como uma máscara escurecendo o fundo.
+        /*
+        Container(
+          color: Colors.black.withOpacity(0.3),
+        ),
+        */
+
+        Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Container(
+            height: 320,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.white,
+          )
+        ]),
+
+        _body(),
+      ],
+    ));
   }
 }
