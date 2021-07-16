@@ -54,8 +54,12 @@ class _LoginPageState extends State<LoginPage> {
                           MaterialPageRoute(builder: (context) => HomePage()));*/
 
                       // Com o pushReplacement, perde a opção de voltar.
-                      Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                      /*Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => HomePage()));*/
+
+                      // Navegação usando as rotas.
+                      //Navigator.of(context).pushNamed('/home');
+                      Navigator.of(context).pushReplacementNamed('/home');
                     } else {
                       print("login inválido");
                     }
