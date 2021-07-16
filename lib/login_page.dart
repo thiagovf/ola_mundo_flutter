@@ -24,6 +24,12 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Container(
+                width: 200,
+                height: 100,
+                child: Image.network(
+                    'https://terrazoo.com.br/wp-content/themes/terrazoo-woocommerce-theme/assets/images/terra_zoo_logo_site_sd.png'),
+              ),
               TextField(
                 onChanged: (text) {
                   email = text;
