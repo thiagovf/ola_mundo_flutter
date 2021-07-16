@@ -3,5 +3,5 @@ import 'package:flutter/material.dart';
 import 'app_widget.dart';
 
 main() {
-  runApp(AppWidget(title: 'Alou, pet!'));
+  runApp(AppWidget());
 }
