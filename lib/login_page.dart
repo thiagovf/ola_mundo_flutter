@@ -49,7 +49,15 @@ class _LoginPageState extends State<LoginPage> {
               ElevatedButton(
                   onPressed: () {
                     if (email == 'thiago@thiago' && password == '123') {
-                      print("logou");
+                      // Só com push, mantem a opção de voltar.
+                      /*Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage()));*/
+
+                      // Com o pushReplacement, perde a opção de voltar.
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    } else {
+                      print("login inválido");
                     }
                   },
                   child: Text('Entrar')),
