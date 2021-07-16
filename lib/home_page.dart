@@ -17,8 +17,11 @@ class _HomePageState extends State<HomePage> {
           child: Column(
         children: [
           UserAccountsDrawerHeader(
-            currentAccountPicture: Image.network(
-                'https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg'),
+            currentAccountPicture: ClipRRect(
+              borderRadius: BorderRadius.circular(40),
+              child: Image.network(
+                  'https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg'),
+            ),
             accountName: Text('Thiago'),
             accountEmail: Text('thiago@thiago'),
           ),
